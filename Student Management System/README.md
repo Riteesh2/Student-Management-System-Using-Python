@@ -1,0 +1,60 @@
+# student-management-system
+Student management system project in python
+
+****Requirements and Installation****
+
+Use pip3 instead of pip for Linux and Mac.
+
+Install PyMySQL
+☛pip install PyMySQL
+
+Install Tkinter
+☛pip install tk
+
+Install MySQL server
+
+Update credentials.py file with the database credentials such as hostname, username, password and database name as shown below
+
+****Create a Database and a Table****
+
+CREATE DATABASE STUDENT_MANAGEMENT;
+
+USE STUDENT_MANAGEMENT;
+
+SHOW TABLES;
+
+CREATE TABLE STUDENTS (
+	ROLL_NO INT NOT NULL,
+	STUDENT_NAME VARCHAR(30) NOT NULL,
+	GROUP_NAME VARCHAR(5) NOT NULL,
+	DATE_OF_BIRTH DATE NOT NULL,
+	GENDER VARCHAR(6) NOT NULL,
+	ADDRESS VARCHAR(50) NOT NULL,
+	MOBILE_NO VARCHAR(10) NOT NULL,
+	EMAIL VARCHAR(30) NOT NULL,
+	PRIMARY KEY ( ROLL_NO )
+);
+
+CREATE TABLE MARKS (
+	MARK_ID INT NOT NULL AUTO_INCREMENT,
+    ROLL_NO INT NOT NULL,
+	FOREIGN KEY(ROLL_NO) REFERENCES STUDENTS (ROLL_NO),
+    GROUP_NAME VARCHAR(5) NOT NULL,
+    TERM INT NOT NULL,
+	ENGLISH INT NOT NULL,
+	MATHEMATICS INT NOT NULL,
+	PHYSICS INT NOT NULL,
+	CHEMISTRY INT NOT NULL,
+	COMPUTER_SCIENCE INT NOT NULL,
+	TOTAL INT NOT NULL,
+	PRIMARY KEY ( MARK_ID )
+);
+
+CREATE TABLE RANKS (
+    ROLL_NO INT NOT NULL,
+	STUDENT_NAME VARCHAR(30) NOT NULL,
+	TOTAL INT NOT NULL,
+	STUDENT_RANK VARCHAR(10) NOT NULL,
+	PRIMARY KEY ( ROLL_NO )
+);
+
