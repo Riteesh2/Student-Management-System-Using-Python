@@ -3,7 +3,7 @@ Student management system project in python
 
 ****Requirements and Installation****
 
-Use pip3 instead of pip for Linux and Mac.
+Use pip3 instead of pip for any Operating System.
 
 Install PyMySQL
 ☛pip install PyMySQL
